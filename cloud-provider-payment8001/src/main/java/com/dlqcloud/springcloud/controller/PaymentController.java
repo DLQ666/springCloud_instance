@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import sun.plugin.com.DispatchClient;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @program: cloud01
@@ -65,6 +66,18 @@ public class PaymentController {
             log.info(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getPort()+"\t"+instance.getUri());
         }
         return this.discoveryClient;
+    }
+
+    @GetMapping(value = "/payment/lb")
+    public String getPaymentLB(){
+        return serverPort;
+    }
+
+    @GetMapping("/payment/feign/timeout")
+    public String paymentFeignTimeout(){
+        //暂停几秒钟线程
+        try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
+        return serverPort;
     }
 
 }

@@ -9,13 +9,13 @@ import org.springframework.web.client.RestTemplate;
  * @program: cloud01
  * @description: 配置类
  * @author: Hasee
- * @create: 2020-06-21 19:02
+ * @create: 2020-06-23 11:39
  */
 @Configuration
-public class ApplicationContextConfig {
+public class ApplicationCotextConfig {
 
     @Bean
-    //@LoadBalanced
+    @LoadBalanced
     public RestTemplate restTemplate(){
         return new RestTemplate();
     }
