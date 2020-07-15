@@ -3,6 +3,7 @@ package com.dlqcloud.springcloud.dao;
 import com.dlqcloud.springcloud.entity.Payment;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
  * @create: 2020-06-21 16:20
  */
 @Mapper
+@Component
 public interface PaymentDao {
 
     public int add(Payment payment);

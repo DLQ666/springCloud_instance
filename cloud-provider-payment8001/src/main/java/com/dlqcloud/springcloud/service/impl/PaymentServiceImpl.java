@@ -20,11 +20,14 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     private PaymentDao paymentDao;
 
-    public int add(Payment payment){
+
+    @Override
+    public int add(Payment payment) {
         return paymentDao.add(payment);
     }
 
-    public Payment getPaymentById(Long id){
+    @Override
+    public Payment getPaymentById(Long id) {
         return paymentDao.getPaymentById(id);
     }
 }
