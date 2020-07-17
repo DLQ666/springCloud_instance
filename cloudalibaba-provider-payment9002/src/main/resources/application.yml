@@ -6,7 +6,8 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848  #配置nacos地址
+#        server-addr: localhost:8848  #配置nacos地址
+        server-addr: gitdlq.top:1111  #配换成nginx的1111端口，做集群
 
 # 暴露监控端点
 management:
