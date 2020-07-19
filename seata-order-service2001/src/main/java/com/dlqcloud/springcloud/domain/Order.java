@@ -13,8 +13,6 @@ import java.math.BigDecimal;
  * @create: 2020-07-18 20:09
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Order
 {
     private Long id;

@@ -5,6 +5,7 @@ import com.dlqcloud.springcloud.domain.Order;
 import com.dlqcloud.springcloud.service.AccountService;
 import com.dlqcloud.springcloud.service.OrderService;
 import com.dlqcloud.springcloud.service.StorageService;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,7 @@ public class OrderServiceImpl implements OrderService {
      *  下订单->减库存->减余额->改状态
      */
     @Override
+    @GlobalTransactional(name = "fsp_tx_group" ,rollbackFor = Exception.class)
     public void create(Order order) {
         log.info("-------> 开始新建订单");
         //1、新建订单
